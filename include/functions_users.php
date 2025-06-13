@@ -27,11 +27,12 @@
  */
 
 function sb_login($email = '', $password = '', $user_id = '', $user_token = '') {
-    echo "here";die;
+    
     global $SB_LOGIN;
     $valid_login = false;
     $result = null;
     $query = 'SELECT id, profile_image, first_name, last_name, email, password, user_type, token, department FROM sb_users ';
+    
     $ip = isset($_SERVER['HTTP_CF_CONNECTING_IP']) && substr_count($_SERVER['HTTP_CF_CONNECTING_IP'], '.') == 3 ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'];
     $ips = sb_get_external_setting('ip-ban', []);
     if (isset($ips[$ip]) && $ips[$ip][0] > 10) {
@@ -45,6 +46,7 @@ function sb_login($email = '', $password = '', $user_id = '', $user_token = '') 
 
         // Login for registered users and agents
         $result = sb_db_get($query . 'WHERE email = "' . sb_db_escape($email) . '" LIMIT 1');
+        print_r($result);
         if (sb_is_error($result)) {
             return $result;
         }
