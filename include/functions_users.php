@@ -27,6 +27,7 @@
  */
 
 function sb_login($email = '', $password = '', $user_id = '', $user_token = '') {
+    echo "here";die;
     global $SB_LOGIN;
     $valid_login = false;
     $result = null;
