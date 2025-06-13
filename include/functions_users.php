@@ -46,7 +46,7 @@ function sb_login($email = '', $password = '', $user_id = '', $user_token = '') 
 
         // Login for registered users and agents
         $result = sb_db_get($query . 'WHERE email = "' . sb_db_escape($email) . '" LIMIT 1');
-        print_r($result);
+        // print_r($result);
         if (sb_is_error($result)) {
             return $result;
         }
