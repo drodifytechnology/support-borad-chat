@@ -10,7 +10,7 @@
  */
 
 header('Access-Control-Allow-Headers: *');
-header('Content-Type: application/json; charset=UTF-8');
+header('Content-Type: application/json; charset=utf-8');
 
 if (file_exists('../config.php')) {
     require_once('../config.php');
@@ -609,6 +609,7 @@ function sb_ajax_execute() {
 
 function sb_json_response($result) {
     
+    echo "here";die;
     if (sb_is_error($result)) {
         return defined('SB_API') ? sb_api_error($result, false) : json_encode(['error', $result->code(), $result->function_name(), $result->message()], JSON_INVALID_UTF8_IGNORE);
     } else {
