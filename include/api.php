@@ -513,9 +513,9 @@ function sb_api_success($result) {
         $response['success'] = true;
         $response['response'] = $result;
     }
-    die(json_encode($response));
-    // return json_encode($response);
-}
+    // die(json_encode($response));
+    return json_encode($response);
+}           
 
 function sb_api_security($token) {
     $admin = sb_db_get('SELECT * FROM sb_users WHERE token = "' . sb_db_escape($_POST['token']) . '" LIMIT 1');

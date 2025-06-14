@@ -619,6 +619,7 @@ function sb_json_response($result) {
         $response = [];
         $response['success'] = true;
         $response['response'] = $result;
+        
         return json_encode($response);
     }
 }
