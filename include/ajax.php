@@ -609,7 +609,7 @@ function sb_ajax_execute() {
 
 function sb_json_response($result) {
     
-    echo "here";die;
+    echo sb_is_error($result);die;
     if (sb_is_error($result)) {
         return defined('SB_API') ? sb_api_error($result, false) : json_encode(['error', $result->code(), $result->function_name(), $result->message()], JSON_INVALID_UTF8_IGNORE);
     } else {
