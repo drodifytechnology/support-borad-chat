@@ -616,7 +616,6 @@ function sb_json_response($result) {
     }
 }
 
-
 function sb_post($key, $default = false) {
     return isset($_POST[$key]) ? ($_POST[$key] === 'false' ? false : ($_POST[$key] === 'true' ? true : $_POST[$key])) : $default;
 }
