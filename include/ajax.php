@@ -10,6 +10,7 @@
  */
 
 header('Access-Control-Allow-Headers: *');
+header('Content-Type: application/json; charset=UTF-8');
 
 if (file_exists('../config.php')) {
     require_once('../config.php');
