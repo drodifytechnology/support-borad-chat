@@ -613,16 +613,18 @@ function sb_json_response($result) {
     if (sb_is_error($result)) {
         return defined('SB_API') ? sb_api_error($result, false) : json_encode(['error', $result->code(), $result->function_name(), $result->message()], JSON_INVALID_UTF8_IGNORE);
     } else {
-        var_dump( defined('SB_API'));die;
         $response = defined('SB_API') ? sb_api_success($result) : (sb_is_validation_error($result) ? ['validation-error', $result->code()] : ['success', $result]);
         return empty($GLOBALS['SB_JSON_RAW']) ? json_encode($response, JSON_INVALID_UTF8_IGNORE) : $response;
         
+        var_dump($response);die;
 
         $response = sb_api_success($result) ;
         
         $response = [];
         $response['success'] = true;
         $response['response'] = $result;
+
+        
         return json_encode($response);
     }
 }
