@@ -618,7 +618,7 @@ function sb_json_response($result) {
         return empty($GLOBALS['SB_JSON_RAW']) ? json_encode($response, JSON_INVALID_UTF8_IGNORE) : $response;
         
         $response = sb_api_success($result) ;
-        var_dump($response);die;
+        
         $response = [];
         $response['success'] = true;
         $response['response'] = $result;

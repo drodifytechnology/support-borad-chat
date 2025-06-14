@@ -513,7 +513,8 @@ function sb_api_success($result) {
         $response['success'] = true;
         $response['response'] = $result;
     }
-    die(json_encode($response));
+    // die(json_encode($response));
+    return json_encode($response);
 }
 
 function sb_api_security($token) {
