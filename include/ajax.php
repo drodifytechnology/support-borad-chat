@@ -10,7 +10,6 @@
  */
 
 header('Access-Control-Allow-Headers: *');
-// header('Content-Type: application/json; charset=UTF-8');
 
 if (file_exists('../config.php')) {
     require_once('../config.php');
@@ -613,8 +612,13 @@ function sb_json_response($result) {
         return defined('SB_API') ? sb_api_error($result, false) : json_encode(['error', $result->code(), $result->function_name(), $result->message()], JSON_INVALID_UTF8_IGNORE);
     } else {
         $response = defined('SB_API') ? sb_api_success($result) : (sb_is_validation_error($result) ? ['validation-error', $result->code()] : ['success', $result]);
-        return empty($GLOBALS['SB_JSON_RAW']) ? json_encode($response, JSON_INVALID_UTF8_IGNORE) : json_encode($response);
+        return empty($GLOBALS['SB_JSON_RAW']) ? json_encode($response, JSON_INVALID_UTF8_IGNORE) : $response;
         
+        // $response = sb_api_success($result) ;
+        // $response = [];
+        // $response['success'] = true;
+        // $response['response'] = $result;
+        // return json_encode($response);
     }
 }
 
