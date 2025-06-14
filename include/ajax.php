@@ -608,27 +608,14 @@ function sb_ajax_execute() {
 }
 
 function sb_json_response($result) {
-    
-    
     if (sb_is_error($result)) {
         return defined('SB_API') ? sb_api_error($result, false) : json_encode(['error', $result->code(), $result->function_name(), $result->message()], JSON_INVALID_UTF8_IGNORE);
     } else {
-        // var_dump(sb_is_validation_error($result));die;
         $response = defined('SB_API') ? sb_api_success($result) : (sb_is_validation_error($result) ? ['validation-error', $result->code()] : ['success', $result]);
-        var_dump($response);die;
         return empty($GLOBALS['SB_JSON_RAW']) ? json_encode($response, JSON_INVALID_UTF8_IGNORE) : $response;
-        
-
-        $response = sb_api_success($result) ;
-        
-        $response = [];
-        $response['success'] = true;
-        $response['response'] = $result;
-
-        
-        return json_encode($response);
     }
 }
+
 
 function sb_post($key, $default = false) {
     return isset($_POST[$key]) ? ($_POST[$key] === 'false' ? false : ($_POST[$key] === 'true' ? true : $_POST[$key])) : $default;
