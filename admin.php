@@ -73,24 +73,24 @@ require('include/components.php');
     <link rel="stylesheet" href="<?php echo $sb_url . 'css/admin.css?v=' . SB_VERSION ?>" media="all" />
     <link rel="stylesheet" href="<?php echo $sb_url . 'css/responsive-admin.css?v=' . SB_VERSION ?>" media="(max-width: 464px)" />
     <?php
-    if ($connection_success && (($is_cloud && defined('SB_CLOUD_DEFAULT_RTL')) || sb_is_rtl())) {
-        echo '<link rel="stylesheet" href="' . $sb_url . 'css/rtl-admin.css?v=' . SB_VERSION . '" />';
-    }
+        if ($connection_success && (($is_cloud && defined('SB_CLOUD_DEFAULT_RTL')) || sb_is_rtl())) {
+            echo '<link rel="stylesheet" href="' . $sb_url . 'css/rtl-admin.css?v=' . SB_VERSION . '" />';
+        }
     ?>
     <link rel="shortcut icon" type="image/png" href="<?php echo $is_cloud ? SB_CLOUD_BRAND_ICON_PNG : sb_get_setting('admin-icon', $sb_url . 'media/icon.png') ?>" />
     <link rel="apple-touch-icon" href="<?php echo $is_cloud ? SB_CLOUD_BRAND_ICON_PNG : sb_get_setting('admin-icon', $sb_url . 'resources/pwa/icons/icon-192x192.png') ?>" />
     <link rel="manifest" href="<?php echo $is_cloud ? SB_CLOUD_MANIFEST_URL : sb_get_setting('manifest-url', $sb_url . '/manifest.json') ?>" />
     <?php
-    if ($is_cloud) {
-        cloud_js_admin();
-        echo $cloud_code;
-    }
-    if ($connection_success) {
-        $GLOBALS['SB_FORCE_ADMIN'] = true;
-        sb_js_global();
-        $GLOBALS['SB_FORCE_ADMIN'] = false;
-        sb_js_admin();
-    }
+        if ($is_cloud) {
+            cloud_js_admin();
+            echo $cloud_code;
+        }
+        if ($connection_success) {
+            $GLOBALS['SB_FORCE_ADMIN'] = true;
+            sb_js_global();
+            $GLOBALS['SB_FORCE_ADMIN'] = false;
+            sb_js_admin();
+        }
     ?>
 </head>
 <body>
