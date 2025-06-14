@@ -112,6 +112,7 @@
                         url: SB_AJAX_URL,
                         data: $.extend({ function: 'ajax_calls', calls: ajax_calls[0] }, data_auto)
                     }).done((response) => {
+                        console.log("i am here" , response)
                         let result;
                         if (Array.isArray(response)) {
                             result = response;
