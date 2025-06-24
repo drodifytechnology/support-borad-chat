@@ -66,8 +66,7 @@ require('include/components.php');
     <meta name="theme-color" content="#566069" />
     <title>
         <?php echo !$is_cloud && $connection_success && sb_get_setting('admin-title') ? sb_get_setting('admin-title') : ($is_cloud ? SB_CLOUD_BRAND_NAME : 'Support Board') ?>
-    </titl
-    
+    </title>
     <script src="<?php echo $sb_url . 'js/min/jquery.min.js?v=' . SB_VERSION ?>"></script>
     <script src="<?php echo $sb_url . ((($is_cloud || $minify) && !sb_is_debug()) ? 'js/min/main.min.js?v=' : 'js/main.js?v=') . SB_VERSION ?>"></script>
     <script src="<?php echo $sb_url . ((($is_cloud || $minify) && !sb_is_debug()) ? 'js/min/admin.min.js?v=' : 'js/admin.js?v=') . SB_VERSION ?>"></script>
