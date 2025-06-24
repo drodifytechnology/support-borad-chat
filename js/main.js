@@ -139,7 +139,7 @@
                                     console.log("138" , onSuccess)
                                     onSuccess(result_sub[1]);
                                 }
-                                location.reload()
+                                
                             } else if (SBF.errorValidation(result_sub)) {
                                 if (onSuccess) {    
                                     onSuccess(result_sub);
