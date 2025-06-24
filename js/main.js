@@ -568,7 +568,8 @@
                 }, () => {
                     SBF.event('SBLogout');
                     if (reload) {
-                        setTimeout(() => { location.reload() }, 500);
+                        // setTimeout(() => { location.reload() }, 500);
+                        setTimeout(() => { window.location.href = "https://support.drodifytechnology.xyz/admin.php"; }, 500);
                     }
                 });
             }
