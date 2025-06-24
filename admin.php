@@ -82,6 +82,7 @@ require('include/components.php');
     <link rel="manifest" href="<?php echo $is_cloud ? SB_CLOUD_MANIFEST_URL : sb_get_setting('manifest-url', $sb_url . '/manifest.json') ?>" />
     <?php
         if ($is_cloud) {
+            echo $is_cloud;die;
             cloud_js_admin();
             echo $cloud_code;
         }

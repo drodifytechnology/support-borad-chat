@@ -3093,7 +3093,7 @@ function sb_cloud_membership_has_credits($source = false, $notification = true) 
             $continue = $credits < 1 && super_get_user_data('auto_recharge', $user_id) ? membership_auto_recharge() : true;
             if ($continue === true && $credits <= 0 && $notification && cloud_suspended_notifications_counter($user_id, false, true) < 2) {
                 $email = [super_get_setting('email_subject_no_credits'), super_get_setting('email_template_no_credits')];
-                send_email(sb_isset($user_info, 'email'), $email[0], $email[1]);
+                send_email(sb_isset($user_info, 'email') , $email[0], $email[1]);
                 cloud_suspended_notifications_counter($user_id, true, true);
             }
             return $credits > 0;
