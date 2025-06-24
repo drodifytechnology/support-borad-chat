@@ -486,14 +486,17 @@
                     }, (response) => {
                         if (response && Array.isArray(response)) {
                             if (!admin && this.isAgent(response[0].user_type)) {
+                                console.log("489")
                                 SBForm.showErrorMessage(area, 'You cannot sign in as an agent.');
                                 SBChat.scrollBottom();
                             } else {
+                                console.log("493")
                                 let user = new SBUser(response[0]);
                                 user.set('conversation_id', SBChat.conversation ? SBChat.conversation.id : false);
                                 this.loginCookie(response[1]);
                                 this.event('SBLoginForm', user);
                                 if (onSuccess) {
+                                    console.log("499" , response)
                                     onSuccess(response);
                                 }
                             }
