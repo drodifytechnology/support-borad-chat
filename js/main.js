@@ -139,6 +139,7 @@
                                     console.log("138" , onSuccess)
                                     onSuccess(result_sub[1]);
                                 }
+                                
                             } else if (SBF.errorValidation(result_sub)) {
                                 if (onSuccess) {    
                                     onSuccess(result_sub);
@@ -564,7 +565,7 @@
                 }, () => {
                     SBF.event('SBLogout');
                     if (reload) {
-
+                        setTimeout(() => { location.reload() }, 500);
                     }
                 });
             }
