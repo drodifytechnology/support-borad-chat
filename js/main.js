@@ -564,7 +564,7 @@
                 }, () => {
                     SBF.event('SBLogout');
                     if (reload) {
-                        // setTimeout(() => { location.reload() }, 500);
+
                     }
                 });
             }
