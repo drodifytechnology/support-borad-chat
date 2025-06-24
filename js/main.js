@@ -147,7 +147,8 @@
                             } else {
                                 if (admin) {
                                     if (result_sub[1] == 'security-error') {
-                                        setTimeout(() => { SBF.reset() }, 1000); 
+                                        // setTimeout(() => { SBF.reset() }, 1000); 
+                                        
                                     }
                                     SBAdmin.conversations.busy = false;
                                 }
