@@ -5,7 +5,7 @@
  * COMPONENTS.PHP
  * ==========================================================
  *
- * Library of static html components for the admin area. This file must not be executed directly. © 2017-2025 board.support. All rights reserved.
+ * Library of static html components for the admin area. This file must not be executed directly. ï¿½ 2017-2025 board.support. All rights reserved.
  *
  */
 
@@ -540,6 +540,7 @@ function sb_component_admin() {
     }
     ?>
     <div class="sb-main <?php echo $css_class ?>" style="opacity: 0">
+        <?php echo $logged; ?>
         <?php if ($logged) { ?>
             <div class="sb-header">
                 <div class="sb-admin-nav">
