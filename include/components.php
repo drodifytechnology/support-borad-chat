@@ -540,7 +540,6 @@ function sb_component_admin() {
     }
     ?>
     <div class="sb-main <?php echo $css_class ?>" style="opacity: 0">
-        <?php echo $logged;die; ?>
         <?php if ($logged) { ?>
             <div class="sb-header">
                 <div class="sb-admin-nav">
