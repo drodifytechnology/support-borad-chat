@@ -5844,14 +5844,14 @@
             let is_cloud = SB_ADMIN_SETTINGS.cloud;
             let is_active = SBApps.is(app_name) && (!is_cloud || SB_CLOUD_ACTIVE_APPS.includes(app_name));
             let ga = '?utm_source=plugin&utm_medium=admin_area&utm_campaign=plugin';
-            if (!is_cloud) {
-                SBF.ajax({
-                    function: 'app-get-key',
-                    app_name: app_name
-                }, (response) => {
-                    box.find('input').val(response);
-                });
-            }
+            // if (!is_cloud) {
+            //     SBF.ajax({
+            //         function: 'app-get-key',
+            //         app_name: app_name
+            //     }, (response) => {
+            //         box.find('input').val(response);
+            //     });
+            // }
             box.setClass('sb-active-app', is_active);
             box.find('input').val('');
             box.find('.sb-top-bar > div:first-child').html($(this).find('h2').html());
