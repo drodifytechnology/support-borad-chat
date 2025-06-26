@@ -305,7 +305,7 @@ function sb_ajax_execute() {
             return sb_json_response(sb_app_get_key($_POST['app_name']));
         case 'wp-sync':
             return sb_json_response(sb_wp_synch());
-        case 'webhooks':    
+        case 'webhooks':
             return sb_json_response(sb_webhooks($_POST['function_name'], $_POST['parameters']));
         case 'system-requirements':
             return sb_json_response(sb_system_requirements());
