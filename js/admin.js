@@ -5839,28 +5839,28 @@
         }, 1000);
 
         $(admin).on('click', '.sb-apps > div:not(.sb-disabled)', function () {
-            // let box = admin.find('.sb-app-box');
-            // let app_name = $(this).data('app');
-            // let is_cloud = SB_ADMIN_SETTINGS.cloud;
-            // let is_active = SBApps.is(app_name) && (!is_cloud || SB_CLOUD_ACTIVE_APPS.includes(app_name));
-            // let ga = '?utm_source=plugin&utm_medium=admin_area&utm_campaign=plugin';
-            // if (!is_cloud) {
-            //     SBF.ajax({
-            //         function: 'app-get-key',
-            //         app_name: app_name
-            //     }, (response) => {
-            //         box.find('input').val(response);
-            //     });
-            // }
-            // box.setClass('sb-active-app', is_active);
-            // box.find('input').val('');
-            // box.find('.sb-top-bar > div:first-child').html($(this).find('h2').html());
-            // box.find('p').html($(this).find('p').html());
-            // box.attr('data-app', app_name);
-            // box.find('.sb-btn-app-setting').sbActive(is_active);
-            // box.find('.sb-btn-app-puchase').attr('href', 'https://board.support/shop/' + app_name + ga);
-            // box.find('.sb-btn-app-details').attr('href', (is_cloud ? WEBSITE_URL : 'https://board.support/') + app_name + ga);
-            // box.sbShowLightbox();
+            let box = admin.find('.sb-app-box');
+            let app_name = $(this).data('app');
+            let is_cloud = SB_ADMIN_SETTINGS.cloud;
+            let is_active = SBApps.is(app_name) && (!is_cloud || SB_CLOUD_ACTIVE_APPS.includes(app_name));
+            let ga = '?utm_source=plugin&utm_medium=admin_area&utm_campaign=plugin';
+            if (!is_cloud) {
+                SBF.ajax({
+                    function: 'app-get-key',
+                    app_name: app_name
+                }, (response) => {
+                    box.find('input').val(response);
+                });
+            }
+            box.setClass('sb-active-app', is_active);
+            box.find('input').val('');
+            box.find('.sb-top-bar > div:first-child').html($(this).find('h2').html());
+            box.find('p').html($(this).find('p').html());
+            box.attr('data-app', app_name);
+            box.find('.sb-btn-app-setting').sbActive(is_active);
+            box.find('.sb-btn-app-puchase').attr('href', 'https://board.support/shop/' + app_name + ga);
+            box.find('.sb-btn-app-details').attr('href', (is_cloud ? WEBSITE_URL : 'https://board.support/') + app_name + ga);
+            box.sbShowLightbox();
         });
 
         $(admin).on('click', '.sb-app-box .sb-activate', function () {
