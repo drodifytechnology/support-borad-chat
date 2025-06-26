@@ -6,7 +6,7 @@
  * ==========================================================
  *
  * Google synchronization.
- * © 2017-2025 board.support. All rights reserved.
+ * ï¿½ 2017-2025 board.support. All rights reserved.
  *
  */
 
