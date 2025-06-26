@@ -1356,7 +1356,7 @@ function sb_component_admin() {
             sb_profile_edit_box();
             sb_dialog();
             sb_direct_message_box();
-            // sb_app_box();
+            sb_app_box();
             if (defined('SB_DIALOGFLOW')) {
                 require_once(SB_PATH . '/apps/dialogflow/components.php');
                 sb_dialogflow_intent_box();
